@@ -1,0 +1,25 @@
+{
+  "name": "postsapp",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.5.1",
+    "body-parser": "~1.4.2",
+    "method-override": "~2.0.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Minimal app to get github open issues for given user and repository",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "brijeshprasad89"
+  },
+  "keywords": [
+    "Javascript",
+    "AngularJS"
+  ],
+  "author": "Brijesh Prasad",
+  "license": "ISC"
+}
