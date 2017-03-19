@@ -8,14 +8,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 		    controller: 'DashboardController'
 		})
 
-		.when('/dashboard', {
-		    templateUrl: 'module1/dashboard.html',
-		    controller: 'DashboardController'
-		})
-		.when('/addPost', {
-		    templateUrl: 'module1/addPost.html#myModal',
-		    controller: 'DashboardController'
-		})
+		// .when('/dashboard', {
+		//     templateUrl: 'module1/dashboard.html',
+		//     controller: 'DashboardController'
+		// })
+		// .when('/addPost', {
+		//     templateUrl: 'module1/addPost.html#myModal',
+		//     controller: 'DashboardController'
+		// })
 		.when('/aboutme', {
 		    templateUrl: 'module2/home.html',
 		    controller: 'MainController'
