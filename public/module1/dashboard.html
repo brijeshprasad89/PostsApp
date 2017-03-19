@@ -20,23 +20,50 @@
         margin-top:10px !important
     }
 </style>
-<a href="/#addPost" data-toggle="modal" class="btn btn-primary btn-lg active addPostButton" role="button">Add Post</a>
-<button type="button" class="btn btn-primary btn-lg addPostButton" data-toggle="modal" data-target="#myModal">
-  Edit Post
-</button>
-<button type="button" class="btn btn-primary btn-lg addPostButton" data-toggle="modal" data-target="#myModal">
-  Delete Post
+<!-- <a href="/#addPost" data-toggle="modal" class="btn btn-primary btn-lg active addPostButton" role="button">Add Post</a> -->
+<div  class=row ng-controller="DashboardController">
+  <button type="button" class="btn btn-primary btn-lg addPostButton" data-toggle="modal"  data-target="#myModal">
+  Add Post
 </button>
 
-<button type="button" class="btn btn-primary btn-lg addPostButton" data-toggle="modal" data-target="#myModal">
-  View Comments
-</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Post</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+              <label for="userid">User-Id</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User Id" ng-model="post.userid">
+            </div>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" placeholder="Title" ng-model="post.title">
+            </div>
+            <div class="form-group">
+              <label for="body">Body</label>
+              <input type="body" class="form-control" id="body" placeholder="Body" ng-model="post.body">
+            </div>
+          </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click = "savePost()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
    <!-- <div> -->
     <!--"-->
     <div class= "active-appointments" >
+
     <hr>
     <ul id="myTab" class="nav nav-tabs" role="tablist">
         <li class="active">
@@ -54,8 +81,8 @@
                     <div ng-repeat="post in posts.data ">
                           <div class="panel panel-default">
                                 <div class="panel-body">
-                                     <input type="checkbox" ng-model="post.id" name="group" id="{{post.id}}" />
-                                      <td>{{post.body}}</td>
+                                      <td>{{post.id}}){{post.body}}</td>
+                                      <span><i class="glyphicon glyphicon-trash" ng-click="deletePost(post.id)"></i><span>
                                 </div>
                           </div>
                     </div>
@@ -66,7 +93,11 @@
 </div>
 </div>
 
+</div>
 
+
+
+<!-- <div ng-include = "'addPost.html'"></div> -->
 <script>
     $(function () {
         $('#modifiedDate').datetimepicker({
